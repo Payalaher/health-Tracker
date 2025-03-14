@@ -1,0 +1,45 @@
+.workout-list {
+    height: 90vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Needed for overlay */
+    color: white;
+}
+
+/* Background Image */
+.workout-list::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/work.jpg'); /* Correct path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.6); /* Darken background slightly */
+    z-index: -1; /* Send it behind content */
+}
+
+/* Ensure text stays above */
+.workout-list h1, 
+.workout-list p {
+    position: relative;
+    z-index: 1;
+}
+
+/* Text Styling */
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.2rem;
+    max-width: 80%;
+    text-align: center;
+}

@@ -1,0 +1,34 @@
+<div class="progress">
+    <h1>Progress for {{ workout }}</h1>
+    <img src="assets/progress.jpg" alt="Progress" class="progress-img" />
+  
+    <div class="progress-tracker">
+      <label for="goal">Set Goal (in hours):</label>
+      <input
+        type="number"
+        id="goal"
+        [(ngModel)]="goal"
+        (input)="updateGoal($event)"
+        placeholder="Enter your goal"
+      />
+  
+      <label for="completed">Completed (in hours):</label>
+      <input
+        type="number"
+        id="completed"
+        [(ngModel)]="completed"
+        (input)="updateCompleted($event)"
+        placeholder="Enter completed hours"
+      />
+    </div>
+  
+    <div class="progress-result">
+      <p><strong>Goal:</strong> {{ goal }} hours</p>
+      <p><strong>Completed:</strong> {{ completed }} hours</p>
+      <p><strong>Progress:</strong> {{ progressPercentage }}%</p>
+  
+      <div class="progress-bar">
+        <div class="progress-fill" [style.width.%]="progressPercentage"></div>
+      </div>
+    </div>
+</div>
